@@ -1,5 +1,6 @@
 package task1;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -60,8 +61,10 @@ final class Cat {
 
     /*********/
 
-    // Ваш код может находится здесь
-    // остальную часть этого файла вы менять не можете
+    public static void sortByBreed(List<Cat> cats) {
+        cats.sort(Comparator.comparing(Cat::getBreed));
+    }
+
 
     /*********/
 }
