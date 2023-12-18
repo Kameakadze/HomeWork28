@@ -19,6 +19,9 @@ public class Main {
         });
         Printer.print(cats);
 
+        cats.removeIf(cat -> cat.getColor() == Cat.Color.GRAY);
+        Printer.print(cats);
+
     }
 
 }
