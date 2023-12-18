@@ -4,27 +4,24 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("All cats: ");
         var cats = Cat.makeCats(10);
         Printer.print(cats);
 
-        cats.sort((cat1, cat2) -> cat1.getBreed().compareTo(cat2.getBreed()));
+        System.out.println("Sort the list by cat breed: ");
+        Cat.sortByBreed(cats);
         Printer.print(cats);
 
-        cats.sort((cat1, cat2) -> {
-            if (cat1.getName().equals(cat2.getName())) {
-                return Integer.compare(cat1.getAge(), cat2.getAge());
-            } else {
-                return cat1.getName().compareTo(cat2.getName());
-            }
-        });
+        System.out.println("Sort list by name and age: ");
+        Cat.sortByNameAndAge(cats);
         Printer.print(cats);
 
-        cats.removeIf(cat -> cat.getColor() == Cat.Color.GRAY);
+        System.out.println("All cats except gray: ");
+        Cat.removeByColor(cats, Cat.Color.GRAY);
         Printer.print(cats);
 
-        cats.removeIf(cat -> cat.getName().length() == 5);
+        System.out.println("cats whose name length is not equal to 5: ");
+        Cat.removeByNameLength(cats, 5);
         Printer.print(cats);
-
     }
-
 }
