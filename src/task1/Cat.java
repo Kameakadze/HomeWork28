@@ -65,6 +65,10 @@ final class Cat {
         cats.sort(Comparator.comparing(Cat::getBreed));
     }
 
+    public static void sortByNameAndAge(List<Cat> cats) {
+        cats.sort(Comparator.comparing(Cat::getName).thenComparingInt(Cat::getAge));
+    }
+
 
     /*********/
 }
