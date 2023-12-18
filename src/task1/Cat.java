@@ -73,6 +73,8 @@ final class Cat {
         cats.removeIf(cat -> cat.getColor() == color);
     }
 
-
+    public static void removeByNameLength(List<Cat> cats, int length) {
+        cats.removeIf(cat -> cat.getName().length() == length);
+    }
     /*********/
 }
